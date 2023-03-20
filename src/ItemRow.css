@@ -1,0 +1,4 @@
+.ItemRow {
+  text-align: left;
+  font-size: calc(4px + 1.25vmin);
+}

@@ -1,0 +1,26 @@
+.ItemTable {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.ItemTable td {
+  border: 1px solid rgb(97, 97, 97);
+  word-wrap: break-word;
+}
+
+.ItemTable .col1 {
+  width: 40%;
+}
+
+.ItemTable .col2 {
+  width: 15%;
+}
+
+.ItemTable .col3 {
+  width: 20%;
+}
+
+.ItemTable .col4 {
+  width: 25%;
+}

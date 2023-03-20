@@ -1,0 +1,24 @@
+.PasteBox {
+  text-align: center;
+}
+
+.PasteBox label {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 70vw;
+}
+
+.PasteBox input {
+  margin-top: 0.5vh;
+}
+
+.PasteBox select {
+  margin-top: 0.5vh;
+  text-align: left;
+}
+
+.PasteBox textarea {
+  margin-top: 0.5vh;
+  resize: none;
+}
