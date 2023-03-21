@@ -21,6 +21,7 @@ export default class ItemTable extends React.Component {
             <td className={"col2"}>{"Quantity"}</td>
             <td className={"col3"}>{"Single (price)"}</td>
             <td className={"col4"}>{"Total (price)"}</td>
+            <td className={"col5"}>{"Source"}</td>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +31,7 @@ export default class ItemTable extends React.Component {
               quantity={jsonRow.quantity}
               price_per={jsonRow.price_per}
               price_total={jsonRow.price_total}
+              source={jsonRow.source}
             />
           ))}
         </tbody>

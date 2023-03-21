@@ -2,7 +2,7 @@
   margin-top: 1vh;
   border-collapse: collapse;
   table-layout: fixed;
-  width: 75%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -23,7 +23,7 @@
 
 .Appraisal .AcceptedTable {
   border: 1px solid rgb(0, 126, 0);
-  width: 75%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -35,7 +35,7 @@
 
 .Appraisal .RejectedTable {
   border: 1px solid rgb(150, 0, 0);
-  width: 75%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
 }

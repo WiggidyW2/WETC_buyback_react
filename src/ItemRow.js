@@ -35,6 +35,10 @@ export default class ItemRow extends React.Component {
     }
   }
 
+  sourceFmt() {
+    return this.props.source;
+  }
+
   render() {
     return (
       <tr className={"ItemRow"}>
@@ -42,6 +46,7 @@ export default class ItemRow extends React.Component {
         <td className={"col2"}>{this.quantityFmt()}</td>
         <td className={"col3"}>{this.pricePerFmt()}</td>
         <td className={"col4"}>{this.priceTotalFmt()}</td>
+        <td className={"col5"}>{this.sourceFmt()}</td>
       </tr>
     );
   }
