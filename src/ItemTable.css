@@ -9,6 +9,10 @@
   word-wrap: break-word;
 }
 
+.ItemTable .col0 {
+  width: 1%;
+}
+
 .ItemTable .col1 {
   width: 33%;
 }

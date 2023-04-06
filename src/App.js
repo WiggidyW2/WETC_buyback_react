@@ -29,7 +29,7 @@ export default class App extends React.Component {
         hash: this.getHash(),
       });
       this.setAppraisal(data);
-      this.forceUpdate();
+      // this.forceUpdate();
     }
   }
 
@@ -63,6 +63,8 @@ export default class App extends React.Component {
         hash={data.hash}
         location={data.location}
         sum={data.sum}
+        timestamp={data.timestamp}
+        version={data.version}
       />
     });
   }

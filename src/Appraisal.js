@@ -10,6 +10,8 @@ export default class Appraisal extends React.Component {
     hash: PropTypes.string,
     location: PropTypes.string,
     sum: PropTypes.number,
+    timestamp: PropTypes.number,
+    version: PropTypes.string,
   }
 
   static defaultProps = {
@@ -18,6 +20,8 @@ export default class Appraisal extends React.Component {
     hash: undefined,
     location: undefined,
     sum: undefined,
+    timestamp: undefined,
+    version: undefined,
   }
   
   constructor(props) {
@@ -25,6 +29,9 @@ export default class Appraisal extends React.Component {
     this.hashFmt = this.hashFmt.bind(this);
     this.locationFmt = this.locationFmt.bind(this);
     this.sumFmt = this.sumFmt.bind(this);
+    this.localTzFmt = this.localTzFmt.bind(this);
+    this.eveTzFmt = this.eveTzFmt.bind(this);
+    this.versionFmt = this.versionFmt.bind(this);
   }
 
   hashFmt() {
@@ -54,6 +61,30 @@ export default class Appraisal extends React.Component {
     }
   }
 
+  localTzFmt() {
+    if (this.props.timestamp === undefined || this.props.timestamp === 0) {
+      return "N/A";
+    } else {
+      return new Date(this.props.timestamp * 1000).toLocaleString()
+    }
+  }
+
+  eveTzFmt() {
+    if (this.props.timestamp === undefined || this.props.timestamp === 0) {
+      return "N/A";
+    } else {
+      return new Date(this.props.timestamp * 1000).toUTCString();
+    }
+  }
+
+  versionFmt() {
+    if (this.props.version === undefined || this.props.version === "") {
+      return "N/A";
+    } else {
+      return this.props.version
+    }
+  }
+
   helperStr() {
     if (this.props.sum > 0.0) {
       return (
@@ -77,9 +108,9 @@ export default class Appraisal extends React.Component {
         <table className={"Results"}>
           <thead>
             <tr>
-              <td>Location</td>
-              <td>Total</td>
-              <td>Hash</td>
+              <td>{"Location"}</td>
+              <td>{"Total"}</td>
+              <td>{"Hash"}</td>
             </tr>
           </thead>
           <tbody>
@@ -87,6 +118,20 @@ export default class Appraisal extends React.Component {
               <td>{this.locationFmt()}</td>
               <td>{this.sumFmt()}</td>
               <td>{this.hashFmt()}</td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr>
+              <td>{"Local TZ"}</td>
+              <td>{"EVE TZ"}</td>
+              <td>{"Version"}</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{this.localTzFmt()}</td>
+              <td>{this.eveTzFmt()}</td>
+              <td>{this.versionFmt()}</td>
             </tr>
           </tbody>
         </table>

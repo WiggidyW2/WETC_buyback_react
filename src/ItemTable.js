@@ -12,6 +12,25 @@ export default class ItemTable extends React.Component {
     rows: [],
   };
 
+  constructor(props) {
+    super(props);
+
+    this.getTbody = this.getTbody.bind(this);
+  }
+
+  getTbody() {
+    return this.props.rows.map(jsonRow => (
+      <ItemRow
+        className={"ItemRow"}
+        name={jsonRow.name}
+        quantity={jsonRow.quantity}
+        price_per={jsonRow.price_per}
+        price_total={jsonRow.price_total}
+        source={jsonRow.source}
+      />
+    ))
+  }
+
   render() {
     return (
       <table className={"ItemTable"}>
@@ -19,21 +38,13 @@ export default class ItemTable extends React.Component {
           <tr>
             <td className={"col1"}>{"Name"}</td>
             <td className={"col2"}>{"Quantity"}</td>
-            <td className={"col3"}>{"Single (price)"}</td>
-            <td className={"col4"}>{"Total (price)"}</td>
+            <td className={"col3"}>{"Single Ƶ"}</td>
+            <td className={"col4"}>{"Total Ƶ"}</td>
             <td className={"col5"}>{"Source"}</td>
           </tr>
         </thead>
         <tbody>
-          {this.props.rows.map(jsonRow => (
-            <ItemRow
-              name={jsonRow.name}
-              quantity={jsonRow.quantity}
-              price_per={jsonRow.price_per}
-              price_total={jsonRow.price_total}
-              source={jsonRow.source}
-            />
-          ))}
+          {this.getTbody()}
         </tbody>
       </table>
     );

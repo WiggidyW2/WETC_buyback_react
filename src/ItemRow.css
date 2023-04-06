@@ -2,3 +2,9 @@
   text-align: left;
   font-size: calc(4px + 1.25vmin);
 }
+
+.SubItemRow {
+  text-align: left;
+  font-size: calc(4px + 1vmin);
+  background-color: rgb(90, 87, 52);
+}
