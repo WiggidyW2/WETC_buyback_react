@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import './Appraisal.css';
 
+const HelperStyle = {
+  border: "4px solid rgb(151, 0, 210)",
+}
+
 export default class Appraisal extends React.Component {
   static propTypes = {
     accepted: PropTypes.array,
@@ -36,7 +40,7 @@ export default class Appraisal extends React.Component {
 
   hashFmt() {
     if (this.props.hash === undefined) {
-      return "N/A";
+      return "";
     } else {
       return this.props.hash;
     }
@@ -44,7 +48,7 @@ export default class Appraisal extends React.Component {
 
   locationFmt() {
     if (this.props.location === undefined) {
-      return "N/A";
+      return "";
     } else {
       return this.props.location;
     }
@@ -63,7 +67,7 @@ export default class Appraisal extends React.Component {
 
   localTzFmt() {
     if (this.props.timestamp === undefined || this.props.timestamp === 0) {
-      return "N/A";
+      return "";
     } else {
       return new Date(this.props.timestamp * 1000).toLocaleString()
     }
@@ -71,7 +75,7 @@ export default class Appraisal extends React.Component {
 
   eveTzFmt() {
     if (this.props.timestamp === undefined || this.props.timestamp === 0) {
-      return "N/A";
+      return "";
     } else {
       return new Date(this.props.timestamp * 1000).toUTCString();
     }
@@ -79,7 +83,7 @@ export default class Appraisal extends React.Component {
 
   versionFmt() {
     if (this.props.version === undefined || this.props.version === "") {
-      return "N/A";
+      return "";
     } else {
       return this.props.version
     }
@@ -88,11 +92,13 @@ export default class Appraisal extends React.Component {
   helperStr() {
     if (this.props.sum > 0.0) {
       return (
-        <div>
+        <div style={HelperStyle}>
           {"Send your contract to "}
-          <strong>{"War Eagle Trading Co."}</strong> 
+          <strong>{"War Eagle Trading Co."}</strong>
+          <br></br>
           {" for the amount "}
           <strong>{this.sumFmt()}</strong> 
+          <br></br>
           {" and put "}<strong>{this.hashFmt()}</strong> 
           {" in the note."}
         </div>
@@ -105,23 +111,15 @@ export default class Appraisal extends React.Component {
   render() {
     return (
       <div className={"Appraisal"}>
+        <div className={"Helper"}>
+          {this.helperStr()}
+        </div>
         <table className={"Results"}>
           <thead>
             <tr>
               <td>{"Location"}</td>
               <td>{"Total"}</td>
               <td>{"Hash"}</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{this.locationFmt()}</td>
-              <td>{this.sumFmt()}</td>
-              <td>{this.hashFmt()}</td>
-            </tr>
-          </tbody>
-          <thead>
-            <tr>
               <td>{"Local TZ"}</td>
               <td>{"EVE TZ"}</td>
               <td>{"Version"}</td>
@@ -129,15 +127,15 @@ export default class Appraisal extends React.Component {
           </thead>
           <tbody>
             <tr>
+              <td>{this.locationFmt()}</td>
+              <td>{this.sumFmt()}</td>
+              <td>{this.hashFmt()}</td>
               <td>{this.localTzFmt()}</td>
               <td>{this.eveTzFmt()}</td>
               <td>{this.versionFmt()}</td>
             </tr>
           </tbody>
         </table>
-        <div className={"Helper"}>
-          {this.helperStr()}
-        </div>
         <div className={"AcceptedHeader"}>ACCEPTED</div>
         <div className={"AcceptedTable"}>
           <ItemTable rows={this.props.accepted}/>

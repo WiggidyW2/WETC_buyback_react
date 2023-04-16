@@ -3,6 +3,8 @@ import PasteBox from "./PasteBox";
 import React from "react";
 import './App.css';
 
+const InventoryUrl = "https://docs.google.com/spreadsheets/d/1ykzkmYYNUBJkf9RXta3a_a2EhJV8NShM8gAY1CmFh70"
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -81,6 +83,12 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+          <table className="HeaderBar">
+            <tr><td>{"War Eagle Trading Co. Buyback Calculator"}</td></tr>
+            <tr><td><a href={InventoryUrl} className="InventoryLink">
+              {"Inventory"}
+            </a></td></tr>
+          </table>
 
           <PasteBox handleSubmit={this.handleSubmit}/>
           

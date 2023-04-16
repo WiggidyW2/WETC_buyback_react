@@ -42,10 +42,6 @@ export default class PasteBox extends React.Component {
             onChange={this.handleTextChange}
             placeholder="paste items here"
           />
-          <input
-            type="submit"
-            value="Submit"
-          />
           <select
             value={this.state.locationValue}
             onChange={this.handleLocationChange}
@@ -57,6 +53,10 @@ export default class PasteBox extends React.Component {
             <option value="Period Basis">Period Basis</option>
             <option value="Senda">Senda</option>
           </select>
+          <input
+            type="submit"
+            value="Submit"
+          />
         </label>
       </form>
     );

@@ -9,11 +9,15 @@
 
 .Appraisal .Results tbody td {
   border: 2px solid rgb(97, 97, 97);
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .Appraisal .Helper {
   margin-top: 2vh;
+  /* border: 4px solid rgb(151, 0, 210); */
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
 }
 
 .Appraisal .AcceptedHeader {
