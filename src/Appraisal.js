@@ -93,14 +93,13 @@ export default class Appraisal extends React.Component {
     if (this.props.sum > 0.0) {
       return (
         <div style={HelperStyle}>
-          {"Send your contract to "}
+          {"Contract to: "}
           <strong>{"War Eagle Trading Co."}</strong>
           <br></br>
-          {" for the amount "}
+          {"Reward: "}
           <strong>{this.sumFmt()}</strong> 
           <br></br>
-          {" and put "}<strong>{this.hashFmt()}</strong> 
-          {" in the note."}
+          {"Description: "}<strong>{this.hashFmt()}</strong> 
         </div>
       );
     } else {
