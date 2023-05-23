@@ -56,11 +56,11 @@ export default class Appraisal extends React.Component {
 
   sumFmt() {
     if (this.props.sum === undefined) {
-      return "0.00";
+      return "0";
     } else {
       return this.props.sum.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
       });
     }
   }
