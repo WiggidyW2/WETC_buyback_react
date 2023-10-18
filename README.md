@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Getting Started with Create React 
+This software is complete. I no longer use it. This repository is inactive and not maintained.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
